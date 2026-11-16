@@ -1,0 +1,96 @@
+pipeline {
+    agent any
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timeout(time: 15, unit: 'MINUTES')
+        skipDefaultCheckout(true)
+    }
+    environment {
+        VIRTUAL_ENV = '.venv'
+    }
+    stages {
+        stage('Checkout') {
+            steps { checkout scm }
+        }
+        stage('Setup') {
+            steps {
+                script {
+                    env.PYTHON = isUnix() ? '.venv/bin/python' : '.venv/Scripts/python.exe'
+                    if (isUnix()) {
+                        sh 'python3 -m venv .venv'
+                        sh "${env.PYTHON} -m pip install -r requirements.txt"
+                        sh 'mkdir -p reports'
+                    } else {
+                        bat 'python -m venv .venv'
+                        bat "${env.PYTHON} -m pip install -r requirements.txt"
+                        bat 'if not exist reports mkdir reports'
+                    }
+                }
+            }
+        }
+        stage('Lint') {
+            steps {
+                script {
+                    def command = "${env.PYTHON} -m flake8 app.py tests scripts"
+                    if (isUnix()) { sh command } else { bat command }
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    def command = "${env.PYTHON} -m pytest -v --junitxml=reports/tests.xml"
+                    if (isUnix()) { sh command } else { bat command }
+                }
+            }
+        }
+        stage('Coverage') {
+            steps {
+                script {
+                    // Also measure child Python processes used by the CLI test.
+                    withEnv(['COVERAGE_PROCESS_START=.coveragerc']) {
+                        def commands = [
+                            "${env.PYTHON} -m coverage erase",
+                            "${env.PYTHON} -m coverage run -m pytest -v",
+                            "${env.PYTHON} -m coverage combine",
+                            "${env.PYTHON} -m coverage report --fail-under=100",
+                            "${env.PYTHON} -m coverage xml",
+                            "${env.PYTHON} -m coverage html"
+                        ]
+                        commands.each { command ->
+                            if (isUnix()) { sh command } else { bat command }
+                        }
+                    }
+                }
+            }
+        }
+        stage('Security Scan') {
+            steps {
+                script {
+                    def command = "${env.PYTHON} -m bandit -r app.py -f json -o reports/bandit.json"
+                    if (isUnix()) { sh command } else { bat command }
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    // Persist outside the workspace so cleanWs does not remove releases.
+                    def destination = "${env.JENKINS_HOME}/deployments/Python-CI-CD"
+                    def command = "${env.PYTHON} scripts/deploy.py --destination \"${destination}\" --build ${env.BUILD_NUMBER}"
+                    if (isUnix()) { sh command } else { bat command }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                if (fileExists('reports/tests.xml')) { junit 'reports/tests.xml' }
+            }
+            archiveArtifacts artifacts: 'reports/**', allowEmptyArchive: true, fingerprint: true
+            cleanWs()
+        }
+    }
+}

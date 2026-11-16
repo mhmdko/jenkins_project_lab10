@@ -1,0 +1,12 @@
+[run]
+source = app
+branch = True
+parallel = True
+patch = subprocess
+[report]
+show_missing = True
+fail_under = 100
+[html]
+directory = reports/htmlcov
+[xml]
+output = reports/coverage.xml
