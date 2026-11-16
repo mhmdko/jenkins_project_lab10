@@ -16,7 +16,7 @@ pipeline {
         stage('Setup') {
             steps {
                 script {
-                    env.PYTHON = isUnix() ? '.venv/bin/python' : '.venv/Scripts/python.exe'
+                    env.PYTHON = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python.exe'
                     if (isUnix()) {
                         sh 'python3 -m venv .venv'
                         sh "${env.PYTHON} -m pip install -r requirements.txt"
