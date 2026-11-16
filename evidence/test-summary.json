@@ -1,0 +1,109 @@
+{
+  "_class": "hudson.tasks.junit.TestResult",
+  "testActions": [],
+  "duration": 0.223,
+  "empty": false,
+  "failCount": 0,
+  "passCount": 5,
+  "skipCount": 0,
+  "suites": [
+    {
+      "cases": [
+        {
+          "testActions": [],
+          "age": 0,
+          "className": "tests.test_app.TestApp",
+          "duration": 0.118,
+          "errorDetails": null,
+          "errorStackTrace": null,
+          "failedSince": 0,
+          "name": "test_command_line",
+          "properties": {},
+          "skipped": false,
+          "skippedMessage": null,
+          "status": "PASSED",
+          "stderr": null,
+          "stdout": null
+        },
+        {
+          "testActions": [],
+          "age": 0,
+          "className": "tests.test_app.TestApp",
+          "duration": 0.001,
+          "errorDetails": null,
+          "errorStackTrace": null,
+          "failedSince": 0,
+          "name": "test_greet_empty_name",
+          "properties": {},
+          "skipped": false,
+          "skippedMessage": null,
+          "status": "PASSED",
+          "stderr": null,
+          "stdout": null
+        },
+        {
+          "testActions": [],
+          "age": 0,
+          "className": "tests.test_app.TestApp",
+          "duration": 0.001,
+          "errorDetails": null,
+          "errorStackTrace": null,
+          "failedSince": 0,
+          "name": "test_greet_name",
+          "properties": {},
+          "skipped": false,
+          "skippedMessage": null,
+          "status": "PASSED",
+          "stderr": null,
+          "stdout": null
+        },
+        {
+          "testActions": [],
+          "age": 0,
+          "className": "tests.test_app.TestApp",
+          "duration": 0.001,
+          "errorDetails": null,
+          "errorStackTrace": null,
+          "failedSince": 0,
+          "name": "test_greet_world",
+          "properties": {},
+          "skipped": false,
+          "skippedMessage": null,
+          "status": "PASSED",
+          "stderr": null,
+          "stdout": null
+        },
+        {
+          "testActions": [],
+          "age": 0,
+          "className": "tests.test_app.TestApp",
+          "duration": 0.001,
+          "errorDetails": null,
+          "errorStackTrace": null,
+          "failedSince": 0,
+          "name": "test_main",
+          "properties": {},
+          "skipped": false,
+          "skippedMessage": null,
+          "status": "PASSED",
+          "stderr": null,
+          "stdout": null
+        }
+      ],
+      "duration": 0.223,
+      "enclosingBlockNames": [
+        "Declarative: Post Actions"
+      ],
+      "enclosingBlocks": [
+        "92"
+      ],
+      "id": null,
+      "name": "pytest",
+      "nodeId": "96",
+      "properties": {},
+      "stderr": null,
+      "stdout": null,
+      "timestamp": "2026-11-16T13:21:50.168298+02:00"
+    }
+  ]
+}

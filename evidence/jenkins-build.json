@@ -1,0 +1,225 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "actions": [
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user lab-admin",
+          "userId": "lab-admin",
+          "userName": "lab-admin"
+        }
+      ]
+    },
+    {
+      "_class": "jenkins.metrics.impl.TimeInQueueAction",
+      "blockedDurationMillis": 0,
+      "blockedTimeMillis": 0,
+      "buildableDurationMillis": 0,
+      "buildableTimeMillis": 16,
+      "buildingDurationMillis": 90038,
+      "executingTimeMillis": 86362,
+      "executorUtilization": 0.96,
+      "subTaskCount": 1,
+      "waitingDurationMillis": 2,
+      "waitingTimeMillis": 4
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.libs.LibrariesAction"
+    },
+    {},
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "buildsByBranchName": {
+        "refs/remotes/origin/main": {
+          "_class": "hudson.plugins.git.util.Build",
+          "buildNumber": 2,
+          "buildResult": null,
+          "marked": {
+            "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+            "branch": [
+              {
+                "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+                "name": "refs/remotes/origin/main"
+              }
+            ]
+          },
+          "revision": {
+            "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+            "branch": [
+              {
+                "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+                "name": "refs/remotes/origin/main"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+        "branch": [
+          {
+            "SHA1": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+            "name": "refs/remotes/origin/main"
+          }
+        ]
+      },
+      "remoteUrls": [
+        "https://github.com/mhmdko/jenkins_project_lab10.git"
+      ],
+      "scmName": ""
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.cps.EnvActionImpl"
+    },
+    {
+      "_class": "hudson.tasks.junit.TestResultAction",
+      "failCount": 0,
+      "skipCount": 0,
+      "totalCount": 5,
+      "urlName": "testReport"
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.displayurlapi.actions.RunDisplayAction"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.pipeline.modeldefinition.actions.RestartDeclarativePipelineAction"
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.views.FlowGraphAction"
+    },
+    {},
+    {}
+  ],
+  "artifacts": [
+    {
+      "displayPath": "bandit.json",
+      "fileName": "bandit.json",
+      "relativePath": "reports/bandit.json"
+    },
+    {
+      "displayPath": "coverage.xml",
+      "fileName": "coverage.xml",
+      "relativePath": "reports/coverage.xml"
+    },
+    {
+      "displayPath": "deployment.json",
+      "fileName": "deployment.json",
+      "relativePath": "reports/deployment.json"
+    },
+    {
+      "displayPath": "app_py.html",
+      "fileName": "app_py.html",
+      "relativePath": "reports/htmlcov/app_py.html"
+    },
+    {
+      "displayPath": "class_index.html",
+      "fileName": "class_index.html",
+      "relativePath": "reports/htmlcov/class_index.html"
+    },
+    {
+      "displayPath": "coverage_html_cb_188fc9a4.js",
+      "fileName": "coverage_html_cb_188fc9a4.js",
+      "relativePath": "reports/htmlcov/coverage_html_cb_188fc9a4.js"
+    },
+    {
+      "displayPath": "favicon_32_cb_c827f16f.png",
+      "fileName": "favicon_32_cb_c827f16f.png",
+      "relativePath": "reports/htmlcov/favicon_32_cb_c827f16f.png"
+    },
+    {
+      "displayPath": "function_index.html",
+      "fileName": "function_index.html",
+      "relativePath": "reports/htmlcov/function_index.html"
+    },
+    {
+      "displayPath": "index.html",
+      "fileName": "index.html",
+      "relativePath": "reports/htmlcov/index.html"
+    },
+    {
+      "displayPath": "keybd_closed_cb_900cfef5.png",
+      "fileName": "keybd_closed_cb_900cfef5.png",
+      "relativePath": "reports/htmlcov/keybd_closed_cb_900cfef5.png"
+    },
+    {
+      "displayPath": "status.json",
+      "fileName": "status.json",
+      "relativePath": "reports/htmlcov/status.json"
+    },
+    {
+      "displayPath": "style_cb_5c747636.css",
+      "fileName": "style_cb_5c747636.css",
+      "relativePath": "reports/htmlcov/style_cb_5c747636.css"
+    },
+    {
+      "displayPath": "tests.xml",
+      "fileName": "tests.xml",
+      "relativePath": "reports/tests.xml"
+    }
+  ],
+  "building": false,
+  "description": null,
+  "displayName": "#2",
+  "duration": 90038,
+  "estimatedDuration": 68564,
+  "executor": null,
+  "fullDisplayName": "Python-CI-CD #2",
+  "id": "2",
+  "keepLog": false,
+  "number": 2,
+  "queueId": 3,
+  "result": "SUCCESS",
+  "timestamp": 1794828037590,
+  "url": "http://127.0.0.1:8081/job/Python-CI-CD/2/",
+  "changeSets": [
+    {
+      "_class": "hudson.plugins.git.GitChangeSetList",
+      "items": [
+        {
+          "_class": "hudson.plugins.git.GitChangeSet",
+          "affectedPaths": [
+            "Jenkinsfile_Mohammad_Kourani"
+          ],
+          "commitId": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+          "timestamp": 1794828032000,
+          "author": {
+            "absoluteUrl": "http://127.0.0.1:8081/user/mak156",
+            "fullName": "mak156"
+          },
+          "authorEmail": "mak156@mail.aub.edu",
+          "comment": "Use Windows command path syntax for virtual environment Python\n",
+          "date": "2026-11-16 13:20:32 +0200",
+          "id": "232ca83d91394ebeeb2a7bd18003716ece0b170b",
+          "msg": "Use Windows command path syntax for virtual environment Python",
+          "paths": [
+            {
+              "editType": "edit",
+              "file": "Jenkinsfile_Mohammad_Kourani"
+            }
+          ]
+        }
+      ],
+      "kind": "git"
+    }
+  ],
+  "culprits": [
+    {
+      "absoluteUrl": "http://127.0.0.1:8081/user/mak156",
+      "fullName": "mak156"
+    }
+  ],
+  "inProgress": false,
+  "nextBuild": null,
+  "previousBuild": {
+    "number": 1,
+    "url": "http://127.0.0.1:8081/job/Python-CI-CD/1/"
+  }
+}

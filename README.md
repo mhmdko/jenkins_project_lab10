@@ -72,4 +72,4 @@ Create `reports` before generating reports locally. See [LAB_REPORT.md](LAB_REPO
 - [Using a Jenkinsfile](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)
 - [Recording tests and artifacts](https://www.jenkins.io/doc/pipeline/tour/tests-and-artifacts/)
 
-Repository access is shared with NourSN2004, HusseinMoukalled, and RanimTahmoush for review.
+Repository review invitations have been sent to NourSN2004, HusseinMoukalled, and RanimTahmoush.

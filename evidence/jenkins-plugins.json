@@ -1,0 +1,32 @@
+[
+  {
+    "shortName": "git",
+    "version": "5.8.0",
+    "active": true
+  },
+  {
+    "shortName": "junit",
+    "version": "1369.v15da_00283f06",
+    "active": true
+  },
+  {
+    "shortName": "pipeline-model-definition",
+    "version": "2.2277.v00573e73ddf1",
+    "active": true
+  },
+  {
+    "shortName": "ssh-agent",
+    "version": "433.v9e73d67c3f74",
+    "active": true
+  },
+  {
+    "shortName": "workflow-aggregator",
+    "version": "608.v67378e9d3db_1",
+    "active": true
+  },
+  {
+    "shortName": "ws-cleanup",
+    "version": "0.49",
+    "active": true
+  }
+]
